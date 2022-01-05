@@ -1,0 +1,93 @@
+@mixin title {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  text-align: center;
+}
+@mixin button {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 2rem;
+  text-align: center;
+}
+@mixin input {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 1.2rem;
+}
+.calculator {
+  max-width: 40rem;
+  margin: 0 auto 5rem auto;
+  &__title {
+    @include title;
+    margin: 0 0 3rem 0;
+  }
+  .calculator__body {
+    max-width: 20rem;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    .first-line {
+			display: grid;
+			grid-template-columns: 3fr 1fr;
+      .input {
+        border: 0.15rem solid #000;
+        border-radius: 0.5rem;
+        height: 3rem;
+        width: 11.5rem;
+        padding: 0 0 0 1rem;
+        @include input;
+				margin: 0 1rem 0 0;
+      }
+      .decor {
+				height: 3rem;
+				position: relative;
+				padding: 1.5rem;
+        &::before {
+					content: "";
+					position: absolute;
+					top: 1.1rem;
+					left: 0.9rem;
+          width: 1.1rem;
+          height: 0.13rem;
+					background-color: #000;
+					transform: rotate(-45deg);
+        }
+				&::after {
+					content: "";
+					position: absolute;
+					top: 1.8rem;
+					left: 0.91rem;
+          width: 1.1rem;
+          height: 0.13rem;
+					background-color: #000;
+					transform: rotate(45deg);
+        }
+      }
+    }
+    .line {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+      margin: 0 0 0.3rem 0;
+      &:last-child {
+        margin: 0;
+      }
+      &__item {
+        flex: 0 1 25%;
+        @include button;
+        cursor: pointer;
+        padding: 1.2rem;
+        margin: 0 0.2rem 0 0;
+        background-color: #80b7b3;
+        border-radius: 0.9rem;
+        transition: all 0.3s ease 0s;
+        &:last-child {
+          margin: 0;
+        }
+        &:hover {
+          background-color: #33a19a;
+        }
+      }
+    }
+  }
+}

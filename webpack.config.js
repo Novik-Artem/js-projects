@@ -7,13 +7,24 @@ const isProd = !isDev;
 const filename = (ext) => isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`;
 module.exports = {
   context: path.resolve(__dirname, "src"),
-  entry: "./js/index.js",
+  entry: ["@babel/polyfill","./js/index.js"],
   module: {
     rules: [
       { test: /\.css$/, use: [MiniCssExtractPlugin.loader, "css-loader"] },
       { test: /\.(svg|ico|png|webp|jpg|gif|jpeg)$/, type: "asset/resource" },
 			{ test: /\.html$/, use: ["html-loader"] },
 			{ test: /\.s[ac]ss$/, use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"] },
+			{
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+						presets: ['@babel/preset-env'],
+						plugins: ["@babel/plugin-proposal-class-properties"]
+          }
+        }
+      },
     ],
   },
   output: {
