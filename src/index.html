@@ -48,8 +48,11 @@
 			calculator
 		</div>
 		<div class="calculator__body">
+			<form action="">
+				<input type="text" readonly class="help-input" value="" id="helpInput">
+			</form>
 			<div class="colculator__line line first-line">
-				<input type="text" class="input" id="input" value="">
+				<input type="text" class="input" id="main-input" value="" readonly>
 				<div class="line__item  decor" id="delete"></div>
 			</div>
 			<div class="colculator__content" id="calculator-content">
@@ -69,13 +72,19 @@
 					<button class="line__item" value="1">1</button>
 					<button class="line__item" value="2">2</button>
 					<button class="line__item" value="3">3</button>
-					<button class="line__item" value="+">+</button>
+					<button class="line__item" value="+" id="sum">+</button>
+				</div>
+				<div class="colculator__line line">
+					<button class="line__item" value="0">0</button>
+					<button class="line__item" id="sqrt">√</button>
+					<button class="line__item" value="." id="point">.</button>
+					<button class="line__item" value="-">-</button>
 				</div>
 				<div class="colculator__line line">
 					<button class="line__item" id="clear">C</button>
-					<button class="line__item" value="0">0</button>
 					<button class="line__item" id="result">=</button>
-					<button class="line__item" value="-">-</button>
+					<button class="line__item" id="pow">x²</button>
+					<button class="line__item" id="percent">%</button>
 				</div>
 			</div>
 		</div>

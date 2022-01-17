@@ -32,7 +32,7 @@ module.exports = {
     filename: `./js/${filename('js')}`,
   },
   devServer: {
-    port: 4200,
+    port: 8080,
     hot: isDev,
   },
   plugins: [

@@ -27,9 +27,16 @@
     padding: 2rem;
     background-color: #fff;
     border-radius: 1rem;
+    .help-input {
+      height: 3rem;
+      width: 15.5rem;
+      padding: 0 0 0 1rem;
+			margin: 0 0 0.3rem 0;
+      @include input;
+    }
     .first-line {
-			display: grid;
-			grid-template-columns: 3fr 1fr;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
       .input {
         border: 0.15rem solid #000;
         border-radius: 0.5rem;
@@ -37,37 +44,37 @@
         width: 11.5rem;
         padding: 0 0 0 1rem;
         @include input;
-				margin: 0 1rem 0 0;
+        margin: 0 1rem 0 0;
       }
       .decor {
-				height: 3rem;
-				position: relative;
-				padding: 1.5rem;
+        height: 3rem;
+        position: relative;
+        padding: 1.5rem;
         &::before {
-					content: "";
-					position: absolute;
-					top: 1.1rem;
-					left: 0.9rem;
+          content: "";
+          position: absolute;
+          top: 1.1rem;
+          left: 0.9rem;
           width: 1.1rem;
           height: 0.13rem;
-					background-color: #000;
-					transform: rotate(-45deg);
+          background-color: #000;
+          transform: rotate(-45deg);
         }
-				&::after {
-					content: "";
-					position: absolute;
-					top: 1.8rem;
-					left: 0.91rem;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 1.8rem;
+          left: 0.91rem;
           width: 1.1rem;
           height: 0.13rem;
-					background-color: #000;
-					transform: rotate(45deg);
+          background-color: #000;
+          transform: rotate(45deg);
         }
       }
     }
     .line {
-			display: grid;
-			grid-template-columns: 1fr 1fr 1fr 1fr;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       margin: 0 0 0.3rem 0;
       &:last-child {
         margin: 0;
