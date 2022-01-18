@@ -8,7 +8,16 @@ const pow = document.querySelector("#pow");
 const percent = document.querySelector("#percent");
 const clear = document.querySelector("#clear");
 const deleteLastSymbol = document.querySelector("#delete");
-
+const isWork = document.querySelector("#is-work");
+let isOn = false;
+isWork.addEventListener("click", () => {
+  isOn = !isOn;
+  if (isOn === true) {
+    mainInput.value = "0.";
+  } else {
+    mainInput.value = "";
+  }
+});
 const inputKey = (key) => {
   mainInput.value = mainInput.value + key;
   if (
@@ -19,11 +28,7 @@ const inputKey = (key) => {
     mainInput.value = "";
   } else if (mainInput.value === "--") {
     mainInput.value = "";
-  } else if (
-    key === "+" ||
-    key === "/" ||
-    key === "*"
-  ) {
+  } else if (key === "+" || key === "/" || key === "*") {
     helpInput.value += mainInput.value;
     mainInput.value = "";
   } else if (mainInput.value === ".") {
@@ -45,9 +50,9 @@ const inputKey = (key) => {
 };
 
 calculatorContent.addEventListener("click", (event) => {
-	if (event.target.tagName === "BUTTON") {
-		inputKey(event.target.value)
-	}
+  if (event.target.tagName === "BUTTON" && isOn === true) {
+    inputKey(event.target.value);
+  }
 });
 
 const result = () => {
@@ -83,17 +88,30 @@ const del = () => {
 };
 deleteLastSymbol.addEventListener("click", del);
 
-document.addEventListener("keydown", function (event) {
-	const values = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0","*","/","+","-","."]
-	if (event.key === "Backspace") {
-		del();
-	}
-	else if (event.key === "Enter") {
-		event.preventDefault();
-		result();
-	}
-	else if (values.includes(event.key)) {
-		console.log(event.key);
-		inputKey(event.key)
-	}
+document.addEventListener("keydown", (event) => {
+  const values = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "0",
+    "*",
+    "/",
+    "+",
+    "-",
+    ".",
+  ];
+  if (event.key === "Backspace") {
+    del();
+  } else if (event.key === "Enter") {
+    event.preventDefault();
+    result();
+  } else if (values.includes(event.key) && isOn === true) {
+    inputKey(event.key);
+  }
 });

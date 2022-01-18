@@ -78,6 +78,7 @@
       margin: 0 0 0.3rem 0;
       &:last-child {
         margin: 0;
+				grid-template-columns: 4fr;
       }
       &__item {
         flex: 0 1 25%;
