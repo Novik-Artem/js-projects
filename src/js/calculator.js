@@ -13,7 +13,7 @@ let isOn = false;
 isWork.addEventListener("click", () => {
   isOn = !isOn;
   if (isOn === true) {
-    mainInput.value = "0.";
+    mainInput.value = "0";
   } else {
     mainInput.value = "";
   }
@@ -37,7 +37,7 @@ const inputKey = (key) => {
   } else if (mainInput.value === "00") {
     mainInput.value = "0";
   } else if (mainInput.value.includes(".")) {
-    point.value = "";
+		point.value = "";
   } else {
     point.value = ".";
   }
@@ -111,7 +111,7 @@ document.addEventListener("keydown", (event) => {
   } else if (event.key === "Enter") {
     event.preventDefault();
     result();
-  } else if (values.includes(event.key) && isOn === true) {
-    inputKey(event.key);
+	} else if (values.includes(event.key) && isOn === true) {
+		inputKey(event.key);
   }
 });
