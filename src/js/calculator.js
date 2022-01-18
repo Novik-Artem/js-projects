@@ -37,7 +37,7 @@ const inputKey = (key) => {
   } else if (mainInput.value === "00") {
     mainInput.value = "0";
   } else if (mainInput.value.includes(".")) {
-		point.value = "";
+    point.value = "";
   } else {
     point.value = ".";
   }
@@ -106,12 +106,15 @@ document.addEventListener("keydown", (event) => {
     "-",
     ".",
   ];
-  if (event.key === "Backspace") {
+  if (isOn) {
+    if (values.includes(event.key) && isOn === true) {
+      inputKey(event.key);
+    }
+  }
+  /*else if (event.key === "Backspace") {
     del();
   } else if (event.key === "Enter") {
     event.preventDefault();
     result();
-	} else if (values.includes(event.key) && isOn === true) {
-		inputKey(event.key);
-  }
+	} */
 });
