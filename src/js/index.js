@@ -5,3 +5,5 @@ import "./calculator.js";
 import "../scss/calculator.scss";
 import "./timer.js";
 import "../scss/timer.scss";
+import "./labyrinth.js";
+import "../scss/labyrinth.scss";
