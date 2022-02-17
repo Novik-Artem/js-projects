@@ -47,6 +47,8 @@ body {
   }
   .slider__body {
     overflow: hidden;
+		border: 0.3rem solid #33a19a;
+		border-radius: 0.3rem;
     .slider__track {
       display: flex;
       transition: all 0.3s ease 0s;
