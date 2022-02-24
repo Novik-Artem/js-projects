@@ -7,3 +7,5 @@ import "./timer.js";
 import "../scss/timer.scss";
 import "./labyrinth.js";
 import "../scss/labyrinth.scss";
+import "./weather.js";
+import "../scss/weather.scss";
