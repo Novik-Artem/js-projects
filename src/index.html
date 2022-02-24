@@ -116,6 +116,24 @@
 	</section>
 	<section class="labyrinth" id="labyrinth">
 	</section>
+	<section class="weather">
+		<div class="weather__title">weather</div>
+		<div class="weather__content content">
+			<input type="text" value="" placeholder="введите город" class="content__input" id="city-input">
+			<div class="content__button" id="check-weather">смотреть погоду</div>
+			<div class="content__info info">
+				<div class="info__icon" id="info-icon"></div>
+				<div class="info__name" id="city-name"></div>
+				<div class="info__desc" id="desc"></div>
+				<div class="info__feels">ощущается как: <span id="feels-like"></span></div>
+				<div class="info__degrees">градусы: <span id="temp"></span></div>
+				<div class="info__humidity">влажность: <span id="humidity"></span>%</div>
+				<div class="info__wind">скорость ветра: <span id="wind-speed"></span>км/ч</div>
+				<div class="info__pressure">давление: <span id="pressure"></span>па</div>
+			</div>
+			<button class="change-deg" id="change">сменить °C на °F</button>
+		</div>
+	</section>
 </body>
 
 </html>
